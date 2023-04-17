@@ -1,0 +1,38 @@
+-git clone,
+-git pull (загрузка репозиторий с облака),
+-git add . (или вместо точки название файла в «»), 
+-git commit “ _________”, 
+-git push, 
+-git status
+-git reset –hard HEAD^1        (Удаляет последний коммит в ветке.)
+- git reset --soft HEAD^1          (Удаляет мягко последний коммит но не удаляет изменения. Последние изменения сохраняет в папку – «Исправления») 
+
+
+
+Алиасы ([alias]) в git это пользовательские сокращенные команды, которые позволяют выполнять стандартные команды git, но использовать при это выбранные нами сокращения.
+Файл gitconfig
+[user]
+    name = login
+    email = email@mail.ru
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[alias]
+    s = status --short
+    l = log --oneline --graph --decorate --all
+    g = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'
+    br = branch
+    co = checkout
+
+
+-> git br -v     (Показывает ветку и последний коммит в ней)
+-> git br develop       (Создание новой ветки develop)
+-> git co develop       (Переход в новую ветку)
+-> git co -b about   (Создаем новую ветку “about” и сразу же в нее переходим)
+-> git br -m myfix      (Переименовываем ветку в которой находимся “about” в “myfix”)
+-> git push --set-upstream origin new_branch                    (Пушем в облако новую ветку, в  
+которой находимся)
+- >git br -d new_branch                                       (Удаление ветки “new_branch”)
+

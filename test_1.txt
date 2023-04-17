@@ -1,0 +1,6 @@
+Авторизация в GIST:
+1.	Устанавливаем расширение "gist" в "Visual Studio";
+2.	Заходим на главную своего профиля в Github, то есть "https://github.com/settings/profile" далее "Developer sesttings" далее "Personal acces tokens" выбираем "generate new token", Генерируя токен, нужно поставить галочку на gist. и копируем наш сгенерированный код(token);
+3.	Заходим в "Visual Studio", жмем F1, вводим "gist" и выбираем "GIST: select profile";
+4.	Вводим в появившееся окно наш сгенерированный TOKEN, далее вас попросят ввести имя пользователя, то есть ВАШЕ имя привязанное к аккаунту на github.
+
